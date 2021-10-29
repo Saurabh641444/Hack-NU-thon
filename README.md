@@ -37,7 +37,8 @@ Dataset:- cpdata.csv which is open source dataset used here.
 <br/>
 In this we have found out that Random forest having good Accuracy
 <br/>
-![](https://github.com/Saurabh641444/Hack-NU-thon/blob/b10986bd546dffd3622709d0ad292889106b038c/app/static/images/HACKNUTHON1.png)
+
+<img src="/app/static/images/HACKNUTHON1.png" alt=""/>
 <br/>
 The accuracy of best model is 99.09%
 <br/>
@@ -61,17 +62,20 @@ The five steps in the life-cycle are as follows:<br/>
 ### Deep Learning Algorithm used- ResNet-9
 In ResNets, unlike in traditional neural networks, each layer feeds into the next layer, we use a network with residual blocks, each layer feeds into the next layer and directly into the layers about 2–3 hops away, to avoid over-fitting (a situation when validation loss stop decreasing at a point and then keeps increasing while training loss still decreases). This also helps in preventing vanishing gradient problem and allow us to train deep neural networks. Here is a simple residual block:
 <br/>
-![](https://github.com/Saurabh641444/Hack-NU-thon/blob/b10986bd546dffd3622709d0ad292889106b038c/app/static/images/HACKNUTHON2.png)
+
+<img src="/app/static/images/HACKNUTHON2.png" alt=""/>
 <br/>
 The accuracy of the model is 99.2%
-<br/>
+
 ### Validation Accuracy
-<br/>
-![](https://github.com/Saurabh641444/Hack-NU-thon/blob/b10986bd546dffd3622709d0ad292889106b038c/app/static/images/HACKNUTHON3.png)
-<br/>
+
+
+<img src="/app/static/images/HACKNUTHON3.png" alt=""/>
+
 ### Validation Loss
-<br/>
-![](https://github.com/Saurabh641444/Hack-NU-thon/blob/b10986bd546dffd3622709d0ad292889106b038c/app/static/images/HACKNUTHON4.png)
+
+
+<img src="/app/static/images/HACKNUTHON4.png" alt=""/>
 <br/>
 
 ## 3. Online Fertilizer store
