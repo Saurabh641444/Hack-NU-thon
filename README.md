@@ -58,7 +58,7 @@ The five steps in the life-cycle are as follows:<br/>
 3. Train the Model.
 4. Evaluate the Model.
 5. Make Predictions.
-<br/>
+
 ### Deep Learning Algorithm used- ResNet-9
 In ResNets, unlike in traditional neural networks, each layer feeds into the next layer, we use a network with residual blocks, each layer feeds into the next layer and directly into the layers about 2–3 hops away, to avoid over-fitting (a situation when validation loss stop decreasing at a point and then keeps increasing while training loss still decreases). This also helps in preventing vanishing gradient problem and allow us to train deep neural networks. Here is a simple residual block:
 <br/>
