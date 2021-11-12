@@ -12,7 +12,7 @@ This project is made in Hack-NU-Thon  which is Hackathon organised by Nirma Univ
 ## Domain:- Agriculture
 ## Technology:- Machine Learning, Deep Learning and Web Development
 ## Languages:- python, html, css and javascript
-## Framework:- Bootstrap, Flask and Adobe
+## Framework:- Bootstrap, Pytorch, tensorflow, Flask and Adobe
 ## Deployment server:- Heroku
 
 In agriculture there is lack of use of technologies. Farmers loose their income because they can't find out diseases of plants in early stage. If they found out then they can use fertilizers to save the production of crops. By using technologies like Deep learning we can find out disease of the plant using there leaves in website. In website we have also included the Fertilizers store and after disease detection we have suggested fertilizer to farmer using API. In fertilizers store we have included the insecticides, pesticides and fertilizers along with its description and prize. Farmer can do online fertilizer ordering
