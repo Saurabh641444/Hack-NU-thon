@@ -13,6 +13,16 @@ import torch
 from torchvision import transforms
 from PIL import Image
 from utils.model import ResNet9
+from flask import Flask
+
+app = Flask(__name__)
+app.debug = True
+
+# your Flask app routes and logic here...
+
+if __name__ == '__main__':
+    app.run()
+
 # ==============================================================================================
 
 # -------------------------LOADING THE TRAINED MODELS -----------------------------------------------
@@ -133,7 +143,7 @@ app = Flask(__name__)
 
 @ app.route('/')
 def home():
-    title = 'Kheti Kaksha - Home'
+    title = 'AGRO-SMART - Home'
     return render_template('index.html', title=title)
 
 # render crop recommendation form page
@@ -141,7 +151,7 @@ def home():
 
 @ app.route('/crop-recommend')
 def crop_recommend():
-    title = 'Kheti Kaksha - Crop Recommendation'
+    title = 'AGRO-SMART - Crop Recommendation'
     return render_template('crop.html', title=title)
 
 # render fertilizer recommendation form page
@@ -149,7 +159,7 @@ def crop_recommend():
 
 @ app.route('/store')
 def store_recommendation():
-    title = 'Kheti Kaksha - Fertilizer Store'
+    title = 'AGRO-SMART - Fertilizer Store'
 
     return render_template('STORE.html', title=title)
 
@@ -158,7 +168,7 @@ def store_recommendation():
 
 @ app.route('/Blog_EN')
 def blog_english():
-    title = 'Kheti Kaksha - Blog'
+    title = 'AGRO-SMART - Blog'
 
     return render_template('Blog_EN.html', title=title)
 
@@ -176,8 +186,7 @@ def blog_english():
 
 @ app.route('/crop-predict', methods=['POST'])
 def crop_prediction():
-    title = 'Kheti Kaksha - Crop Recommendation'
-
+    title = 'AGRO-SMART'
     if request.method == 'POST':
         N = int(request.form['nitrogen'])
         P = int(request.form['phosphorous'])
@@ -205,7 +214,7 @@ def crop_prediction():
 
 # @ app.route('/fertilizer-predict', methods=['POST'])
 # def fert_recommend():
-#     title = 'Kheti Kaksha - Fertilizer Suggestion'
+#     title = 'AGRO-SMART - Fertilizer Suggestion'
 
 #     crop_name = str(request.form['cropname'])
 #     N = int(request.form['nitrogen'])
@@ -249,7 +258,7 @@ def crop_prediction():
 
 @app.route('/disease-predict', methods=['GET', 'POST'])
 def disease_prediction():
-    title = 'Kheti Kaksha - Disease Detection'
+    title = 'AGRO-SMART - Disease Detection'
 
     if request.method == 'POST':
         if 'file' not in request.files:
