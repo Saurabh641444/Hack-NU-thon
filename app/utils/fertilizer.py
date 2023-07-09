@@ -1,5 +1,5 @@
 fertilizer_dic = {
-        'NHigh': """The N value of soil is high and might give rise to weeds.
+        'NHigh': """The Nitrogen (N) value of soil is high and might give rise to weeds.
         <br/> Please consider the following suggestions:
 
         <br/><br/> 1. <i> Manure </i> – adding manure is one of the simplest ways to amend your soil with nitrogen. Be careful as there are various types of manures with varying degrees of nitrogen.
@@ -12,7 +12,7 @@ fertilizer_dic = {
 
         <br/>5. <i>Use mulch (wet grass) while growing crops</i> - Mulch can also include sawdust and scrap soft woods""",
 
-        'Nlow': """The N value of your soil is low.
+        'Nlow': """The Nitrogen (N) value of your soil is low.
         <br/> Please consider the following suggestions:
         <br/><br/> 1. <i>Add sawdust or fine woodchips to your soil</i> – the carbon in the sawdust/woodchips love nitrogen and will help absorb and soak up and excess nitrogen.
 
@@ -30,7 +30,7 @@ fertilizer_dic = {
 
         <br/>8. <i>Do nothing</i> – It may seem counter-intuitive, but if you already have plants that are producing lots of foliage, it may be best to let them continue to absorb all the nitrogen to amend the soil for your next crops.""",
 
-        'PHigh': """The P value of your soil is high.
+        'PHigh': """The Phosphorus (P) value of your soil is high.
         <br/> Please consider the following suggestions:
 
         <br/><br/>1. <i>Avoid adding manure</i> – manure contains many key nutrients for your soil but typically including high levels of phosphorous. Limiting the addition of manure will help reduce phosphorus being added.
@@ -43,7 +43,7 @@ fertilizer_dic = {
 
         <br/>5. Use crop rotations to decrease high phosphorous levels""",
 
-        'Plow': """The P value of your soil is low.
+        'Plow': """The Phosphorus (P) value of your soil is low.
         <br/> Please consider the following suggestions:
 
         <br/><br/>1. <i>Bone meal</i> – a fast acting source that is made from ground animal bones which is rich in phosphorous.
@@ -64,7 +64,7 @@ fertilizer_dic = {
 
         <br/>9. If pH is high, addition of appreciable amount of organic matter will help acidify the soil. Application of acidifying fertilizers, such as ammonium sulfate, can help lower soil pH""",
 
-        'KHigh': """The K value of your soil is high</b>.
+        'KHigh': """The Potassium (K) of your soil is high</b>.
         <br/> Please consider the following suggestions:
 
         <br/><br/>1. <i>Loosen the soil</i> deeply with a shovel, and water thoroughly to dissolve water-soluble potassium. Allow the soil to fully dry, and repeat digging and watering the soil two or three more times.
@@ -80,7 +80,7 @@ fertilizer_dic = {
         <br/>6. Grow a cover crop of legumes that will fix nitrogen in the soil. This practice will meet the soil’s needs for nitrogen without increasing phosphorus or potassium.
         """,
 
-        'Klow': """The K value of your soil is low.
+        'Klow': """The Potassium (K) value of your soil is low.
         <br/>Please consider the following suggestions:
 
         <br/><br/>1. Mix in muricate of potash or sulphate of potash

@@ -158,7 +158,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="background-color: #1C00ff00;">
 		<div class="container">
 			<a class="navbar-brand" href="{{ url_for('home') }}">
-				<img src="{{ url_for('static', filename='images/logo.png') }}" style="width: 90px; height: 60px" alt="">
+				<img src="{{ url_for('static', filename='images/logo.jpg') }}" style="width: 90px; height: 60px" alt="">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -174,9 +174,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a>
 					</li>
-					<!-- <li class="nav-item">
-						<a class="nav-link" href="/">Fertilizer</a>
-					</li> -->
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a>
+					</li> 
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease</a>
 					</li>
@@ -196,7 +196,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- logo -->
 			<h2 class="logo2 text-center">
 				<a href="{{ url_for('home') }}">
-					Kheti Kaksha
+					AGRO-SMART
 				</a>
 			</h2>
 			<!-- //logo -->
@@ -214,8 +214,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<p class="text-da">An Environmental Intelligence Startup<br> </p>
 			</div>
 			<p class="homelogo">
-			<p>Made with ❤️ by Codesmashers </p>
-			<p>&copy; Copyright 2021 </p>
+			<p> </p>
+			<p>&copy; Copyright 2023 </p>
 			
 		</div>
 	</footer>

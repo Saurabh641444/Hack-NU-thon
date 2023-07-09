@@ -1,6 +1,6 @@
 # Importing essential libraries and modules
 
-from flask import Flask, render_template, request, Markup
+from flask import Flask, render_template, request, Markup,redirect
 import numpy as np
 import pandas as pd
 from utils.disease import disease_dic
@@ -20,8 +20,6 @@ app.debug = True
 
 # your Flask app routes and logic here...
 
-if __name__ == '__main__':
-    app.run()
 
 # ==============================================================================================
 
@@ -164,7 +162,10 @@ def store_recommendation():
     return render_template('STORE.html', title=title)
 
 # render fertilizer recommendation form page
-
+@ app.route('/fertilizer')
+def fertilizer_recommendation():
+    title = 'AGRO-SMART- Fertilizer Suggestion'
+    return render_template('fertilizer.html', title=title)
 
 @ app.route('/Blog_EN')
 def blog_english():
@@ -184,7 +185,7 @@ def blog_english():
 # render crop recommendation result page
 
 
-@ app.route('/crop-predict', methods=['POST'])
+@ app.route('/crop-predict', methods=[ 'POST'])
 def crop_prediction():
     title = 'AGRO-SMART'
     if request.method == 'POST':
@@ -193,10 +194,9 @@ def crop_prediction():
         K = int(request.form['pottasium'])
         ph = float(request.form['ph'])
         rainfall = float(request.form['rainfall'])
-
-        # state = request.form.get("stt")
+        #state = request.form.get("stt")
         city = request.form.get("city")
-
+        
         if weather_fetch(city) != None:
             temperature, humidity = weather_fetch(city)
             data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
@@ -210,51 +210,51 @@ def crop_prediction():
             return render_template('try_again.html', title=title)
 
 # render fertilizer recommendation result page
+@app.route('/fertilizer_recommendation', methods=['GET', 'POST'])
+def fert_recommend():
+    title = 'AGRO-SMART'
+    if request.method == 'POST':
+     crop_name = request.form['cropname']
+     print(crop_name)
+     n = request.form['nitrogen']
+     p = request.form['phosphorous']
+     k = request.form['pottasium']
+     #ph = request.form['ph']
+     print(k)
+     df = pd.read_csv('D:\\AGROSMART\\app\\Data\\fertilizer.csv')
+     nr = df[df['Crop'] == crop_name]['N'].iloc[0]
+     pr = df[df['Crop'] == crop_name]['P'].iloc[0]
+     kr = df[df['Crop'] == crop_name]['K'].iloc[0]
+     
+     n = nr - int(n)
+     p = pr - int(p)
+     k = kr - int(k)
+     temp = {abs(n): "N", abs(p): "P", abs(k): "K"}
+     max_value = temp[max(temp.keys())]
+     if max_value == "N":
+        if n < 0:
+            key = 'NHigh'
+        else:
+            key = "Nlow"
+     elif max_value == "P":
+        if p < 0:
+            key = 'PHigh'
+        else:
+            key = "Plow"
+     else:
+        if k < 0:
+            key = 'KHigh'
+        else:
+            key = "Klow"
 
+     response = Markup(str(fertilizer_dic[key]))
 
-# @ app.route('/fertilizer-predict', methods=['POST'])
-# def fert_recommend():
-#     title = 'AGRO-SMART - Fertilizer Suggestion'
-
-#     crop_name = str(request.form['cropname'])
-#     N = int(request.form['nitrogen'])
-#     P = int(request.form['phosphorous'])
-#     K = int(request.form['pottasium'])
-#     # ph = float(request.form['ph'])
-
-#     df = pd.read_csv('Data/fertilizer.csv')
-
-#     nr = df[df['Crop'] == crop_name]['N'].iloc[0]
-#     pr = df[df['Crop'] == crop_name]['P'].iloc[0]
-#     kr = df[df['Crop'] == crop_name]['K'].iloc[0]
-
-#     n = nr - N
-#     p = pr - P
-#     k = kr - K
-#     temp = {abs(n): "N", abs(p): "P", abs(k): "K"}
-#     max_value = temp[max(temp.keys())]
-#     if max_value == "N":
-#         if n < 0:
-#             key = 'NHigh'
-#         else:
-#             key = "Nlow"
-#     elif max_value == "P":
-#         if p < 0:
-#             key = 'PHigh'
-#         else:
-#             key = "Plow"
-#     else:
-#         if k < 0:
-#             key = 'KHigh'
-#         else:
-#             key = "Klow"
-
-#     response = Markup(str(fertilizer_dic[key]))
-
-#     return render_template('fertilizer-result.html', recommendation=response, title=title)
+     return render_template('fertilizer-result.html', recommendation=response, title=title)
+    
+    else:
+      return render_template('fertilizer.html',title=title)  
 
 # render disease prediction result page
-
 
 @app.route('/disease-predict', methods=['GET', 'POST'])
 def disease_prediction():
@@ -272,10 +272,12 @@ def disease_prediction():
             prediction = predict_image(img)
 
             prediction = Markup(str(disease_dic[prediction]))
-            return render_template('disease-result.html', prediction=prediction, title=title)
+            return render_template('disease-result.html', prediction=prediction, title=title)  
         except:
             pass
     return render_template('disease.html', title=title)
+       
+        
 
 
 # ===============================================================================================

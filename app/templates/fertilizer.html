@@ -22,7 +22,7 @@
     padding: 10px 10px;
   "
 >
-  <form method="POST" action="{{ url_for('fert_recommend') }}">
+  <form method="POST" action="/fertilizer_recommendation">
     <div class="form-group">
       <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
       <input
@@ -87,7 +87,7 @@
         required
       >
         <option selected>Select crop</option>
-        <option>rice</option>
+        <option value="rice">rice</option>
         <option>maize</option>
         <option>chickpea</option>
         <option>kidneybeans</option>
@@ -111,6 +111,7 @@
         <option>coffee</option>
       </select>
     </div>
+    
 
     <div class="d-flex justify-content-center">
       <button
